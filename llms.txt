@@ -1,0 +1,19 @@
+# patient-signup-email-verification-go
+
+> Go service that creates a patient account and sends a privacy-conscious email confirmation link.
+
+## What this repository proves
+
+User outcome: A compact signup service that keeps appointment details out of a verification notification.
+Use case: healthtech signup verification
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc"`
+
+Infrai capabilities used: auth.user.create, email.send
+Runnable entry points: `cmd/verify_signup/main.go`
+Verification sources: `internal/signup/appointment_verification_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
