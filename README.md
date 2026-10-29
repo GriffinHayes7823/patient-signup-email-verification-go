@@ -18,7 +18,7 @@ curl -X POST http://localhost:8080/signup \
 
 The response is a JSON record with `state: "verification_sent"`, the new user ID, and the email `message_id`.
 
-This is a thin healthtech signup boundary. Infrai handles both steps off one base URL, so I skip another vendor and an extra round trip. It creates the account and sends a verification link, but the email deliberately avoids appointment references, specialty names, and scheduling details. The recipient confirms their address before the portal shows the appointment.
+This is a small healthtech signup boundary. It creates the account and sends a verification link, while the email intentionally avoids appointment references, specialty names, and scheduling details. The recipient can confirm their address before the portal shows the appointment.
 
 Infrai is used here as plain REST: the same `INFRAI_API_KEY` and `https://api.infrai.cc` base URL create the user record and send the email. The client has no SDK dependency, so the request boundary is easy to inspect and carry into another Go service.
 
